@@ -1,0 +1,205 @@
+<h1>Hello Angular {{title}}</h1>
+<h1>{{data}}</h1>
+<h1>{{getValue()}}</h1>
+<h1>{{2+2}}</h1>
+<h1>{{2*2/4}}</h1>
+<h1>{{title=="blog"}}</h1>
+<!-- <h1>{{title="Hello"}}</h1> // Error -->
+<!-- <h1>{{typeof title}}</h1> // Error -->
+<h1>{{data2}}</h1>
+<!-- <h1>{{data2++}}</h1> -->
+<!-- <h1>{{new title}}</h1> -->
+
+<h1 class="{{title}}">Hello Angular {{title}}</h1>
+
+<app-user-list></app-user-list>
+<app-user-list></app-user-list>
+<!-- <app-user-line></app-user-line> -->
+
+<!-- user-list2 -->
+<app-user-list2></app-user-list2>
+
+<!-- student-list -->
+<app-student-list></app-student-list>
+
+<!-- country-list -->
+<app-country-list></app-country-list>
+
+<!-- use-auth2/login -->
+<!-- <app-login></app-login> -->
+
+<!-- use-auth2/login2 -->
+<app-login2></app-login2>
+
+<!-- Function  -->
+<h2>Function in Angular</h2>
+<button (click)="getName('Deepak', 'peter')">Click Me 1</button>
+<button (click)="getNumber()">Click Me 2</button>
+
+<!-- Important Events -->
+<br>
+<br>
+<button (click)="getData('Hello')">Call Function</button>
+<br>
+<input type="text" #box1 (keyup)="getData(box1.value)" placeholder="Event keyup" />
+<br>
+<input type="text" #box2 (keydown)="getData(box2.value)" placeholder="Event keydown" />
+<br>
+<input type="text" #box3 (blur)="getData(box3.value)" placeholder="Event blur" />
+<br>
+<input type="text" #box4 (input)="getData(box4.value)" placeholder="Event input" />
+
+<h1 (mouseover)="getData('over')" >Code Step BY Step</h1>
+<h1 (mouseleave)="getData('leave')" >Deepak Thakur</h1>
+
+<!-- Get Input Box Value and Display -->
+<h1>{{title}}</h1>
+<h2>Get Input Box Value</h2>
+
+<input type="text" #box placeholder="Enter Name: " name="name" />
+<button (click)="getValue2(box.value)" >Click</button>
+
+<input type="text" #box placeholder="Enter Name: " name="username" />
+<button (click)="getValue2(box.name)" >Click</button>
+
+<p>
+  Box value is:   {{displayVal}}
+</p>
+
+<br>
+<!-- Counter Example -->
+<h1>Counter with Angular Example</h1>
+<button (click)="counter('minus')" >--</button>
+<p>Count : {{count}}</p>
+<button (click)="counter('add')" >++</button>
+
+<!-- Basic Rule of Style -->
+<!-- Internal css  -->
+<style>
+  .heading2{
+    color: blue;
+  }
+</style>
+<h1 class="heading"> {{title}} </h1>
+<h2 class="heading2"> {{title}} </h2>
+<h2 style="color: aqua;"> Basic Rule of Style </h2>
+<br>
+
+<!-- Property Binding Example -->
+<h1>Property Binding</h1>
+<input type="text" name="user-name" value="{{name}}" disabled="{{disable}}">  <!-- Interpolation == Works in String or Numberic value / Doesn't work in Boolean value -->
+<br><br>
+<input type="text" name="user-name" [value]="name" [disabled]="disable">    <!-- Property Binding == Works in String or Numberic and also works in Boolean value -->
+
+<!-- If-else Condition -->
+<h1>If-else Condition {{title}}</h1>
+<h1 *ngIf="show=='yes'; then ifBlock else elseBlock"></h1>
+
+<ng-template #ifBlock>
+  <h1>If Condition</h1>
+</ng-template>
+
+<ng-template #elseBlock>
+  <h1>Else Condition</h1>
+</ng-template>
+
+<!-- Multiple condition or else if -->
+<h1>Multiple condition or else if</h1>
+<ng-template [ngIf]="color==='red'">
+  <h1 style="color: red;">Red Color</h1>
+</ng-template>
+
+<ng-template [ngIf]="color==='green'">
+  <h1 style="color: green;">Green Color</h1>
+</ng-template>
+
+<ng-template [ngIf]="color==='blue'">
+  <h1 style="color: blue;">Blue Color</h1>
+</ng-template>
+
+<!-- Switch Case Vid 18 -->
+<h1> Switch Case Vid 18</h1>
+<div [ngSwitch]="color1">
+  <h1 *ngSwitchCase="'red'" style="color: red;">Red Color</h1>
+  <h1 *ngSwitchCase="'green'" style="color: green;">Green Color</h1>
+  <h1 *ngSwitchCase="'blue'" style="color: blue;">Blue Color</h1>
+  <h1 *ngSwitchCase="'orange'" style="color: orange;">Orange Color</h1>
+  <h1 *ngSwitchCase="'skyblue'" style="color: skyblue;">Skyblue Color</h1>
+  <h1 *ngSwitchDefault style="color: brown;">Unknown Color, Default Case</h1>
+</div>
+
+<!-- For loop Vid 19 -->
+<h1>For loop Vid 19</h1>
+<h3 *ngFor="let item of users" >Name is: {{item}}</h3>
+
+<h3 *ngFor="let item of userDetails" >Name: {{item.name}} -- Email: {{item.email}} -- Phone: {{item.phone}}</h3>
+<br>
+<h3 *ngFor="let i of userDetails" >Name: {{i.name}} -- Email: {{i.email}} -- Phone: {{i.phone}}</h3>
+
+<!-- item and i is a variable. we can take any name of variable. -->
+
+
+<!-- Nested loop Vid 20 -->
+<h1>Nested loop Vid 20</h1>
+<ul *ngFor="let user of users1">
+  <li>Name: {{user.name}}</li>
+  <li>Phone: {{user.phone}}</li>
+  <!-- <li>Social Media: {{user.socialAccounts}}</li> -->
+  <li>Social Accounts</li>
+  <ul *ngFor="let account of user.socialAccounts">
+    <li>{{account}}</li>
+  </ul>
+</ul>
+
+
+<!-- Style Binding vid 21 -->
+<h1 [style.color]="'green'">Style Binding vid 21</h1>
+<h1 [style.color]="color2"[style.BackgroundColor]="bgColor">Style Binding vid 21</h1>
+<h1 [style.color]="color2"[style.BackgroundColor]="bgColor">Style Binding vid 21</h1>
+<button (click)="updateColor()">Update Color</button>
+<br>
+<br>
+
+<!-- Header Vid 22 -->
+<app-header></app-header>
+<br>
+
+<!-- Basic Form vid 23 -->
+<h1>Basic Form</h1>
+<form #BasicForm="ngForm" (ngSubmit)="getData1(BasicForm.value)" >
+
+  <input type="text" ngModel name="user" placeholder="Enter User Name: " />
+  <br /> <br />
+  <input type="email" ngModel name="email" placeholder="Enter User Email: " />
+  <br /> <br />
+  <input type="password" ngModel name="password" placeholder="Enter User Password: " />
+  <br /> <br />
+  <button>Register</button>
+
+</form>
+<br>
+
+<ul>
+  <li>User Name: {{userData.user}}</li>
+  <li>User Email: {{userData.email}}</li>
+  <li>User Password: {{userData.password}}</li>
+</ul>
+
+<!-- Basic Form vid 23 End -->
+
+<!-- Toggle Element Vid 24 -->
+<h1>Toggle Element Vid 24</h1>
+<button (click)="toggle()">Toggle</button>
+<h1 *ngIf="display">
+  Heading Tag
+</h1>
+
+<!-- <div *ngIf="display">
+  Heading Tag
+  <h1>Hello</h1>
+  <h1>Hello</h1>
+  <h1>Hello</h1>
+  <h1>Hello</h1>
+</div> -->
+
+<br /> <br />

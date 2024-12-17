@@ -1,0 +1,11 @@
+.footer {
+  /* position: absolute; */
+  /* position: fixed; */
+  position: relative;
+  background-color: skyblue;
+  width: 99%;
+  color: #fff;
+  padding: 10px;
+  bottom: 0;
+  text-align: center;
+}

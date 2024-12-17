@@ -1,0 +1,293 @@
+<h2>How to use Bootstrap with angular Vid - 25</h2> <br>
+
+<p>
+	<ngb-alert [dismissible]="false">
+		<strong>Warning!</strong> Better check yourself, you're not looking too good.
+	</ngb-alert>
+</p>
+
+<!-- accordion  -->
+<div ngbAccordion>
+	<div ngbAccordionItem [collapsed]="false">
+		<h2 ngbAccordionHeader>
+			<button ngbAccordionButton>Simple</button>
+		</h2>
+		<div ngbAccordionCollapse>
+			<div ngbAccordionBody>
+				<ng-template>
+					Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3
+					wolf moon
+					officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.
+					Brunch 3 wolf
+					moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et.
+					Nihil anim
+					keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan
+					excepteur
+					butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt
+					you probably
+					haven't heard of them accusamus labore sustainable VHS.
+				</ng-template>
+			</div>
+		</div>
+	</div>
+	<div ngbAccordionItem>
+		<h2 ngbAccordionHeader>
+			<button ngbAccordionButton>
+				<span>&#9733; <b>Fancy</b> title &#9733;</span>
+			</button>
+		</h2>
+		<div ngbAccordionCollapse>
+			<div ngbAccordionBody>
+				<ng-template>
+					Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3
+					wolf moon
+					officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.
+					Brunch 3 wolf
+					moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et.
+					Nihil anim
+					keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan
+					excepteur
+					butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt
+					you probably
+					haven't heard of them accusamus labore sustainable VHS.
+				</ng-template>
+			</div>
+		</div>
+	</div>
+	<div ngbAccordionItem [disabled]="true">
+		<h2 ngbAccordionHeader>
+			<button ngbAccordionButton>Disabled</button>
+		</h2>
+		<div ngbAccordionCollapse>
+			<div ngbAccordionBody>
+				<ng-template>
+					Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3
+					wolf moon
+					officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.
+					Brunch 3 wolf
+					moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et.
+					Nihil anim
+					keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan
+					excepteur
+					butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt
+					you probably
+					haven't heard of them accusamus labore sustainable VHS.
+				</ng-template>
+			</div>
+		</div>
+	</div>
+</div>
+<br>
+
+<h2>Material Ui Vid - 26</h2>
+<mat-slide-toggle>Toggle me!</mat-slide-toggle>
+<br><br>
+
+<!-- Button  -->
+<section>
+	<div class="example-label">Raised</div>
+	<div class="example-button-row">
+		<button mat-raised-button>Basic</button>
+		<button mat-raised-button color="primary">Primary</button>
+		<button mat-raised-button color="accent">Accent</button>
+		<button mat-raised-button color="warn">Warn</button>
+		<button mat-raised-button disabled>Disabled</button>
+		<a mat-raised-button href="https://www.google.com/" target="_blank">Link</a>
+	</div>
+</section>
+<br><br>
+
+<!-- Badge  -->
+<div class="demo-section">
+	Button with a badge on the left
+	<button mat-raised-button color="primary" matBadge="8" matBadgePosition="before" matBadgeColor="accent">
+		Action
+	</button>
+</div>
+<br><br>
+
+<!-- Todo list in angular vid - 27 -->
+<h2>Todo list in angular vid - 27</h2>
+<input type="text" placeholder="Enter New Task" #task />
+<br><br>
+<button (click)="addTask(task.value)">Add Task</button>
+
+<br>
+<ul *ngFor="let item of list">
+	<li>{{item.name}} <button (click)="removeTask(item.id)">Remove</button></li>
+</ul>
+
+<br><br>
+
+<!-- Pass Data Child to component Vid 28 -->
+<h2>Pass Data Child to component Vid - 28</h2>
+<app-child [item]="data"></app-child>
+<app-child [item]="data"></app-child>
+<app-child [item]="data"></app-child>
+<button (click)="updateChild()">Update Child Component</button>
+<br><br>
+
+<!-- Resuable Component Vid 29 -->
+<h2>Resuable Component Vid 29</h2>
+<!-- <app-user-details></app-user-details> -->
+<ul *ngFor="let user of userDetails">
+	<app-user-details [item]="user"></app-user-details>
+</ul>
+
+<br><br>
+
+<!-- Send Data Child to Parent Component vid 30 -->
+<h2>Send Data Child to Parent Component vid 30</h2>
+<app-child2 (updateDataEvent)="updateData($event)"></app-child2>
+<h5>{{data2}}</h5>
+<br>
+
+<!-- Two-way binding Vid 31 -->
+<h2>Two-way binding Vid 31</h2>
+<input type="text" [(ngModel)]="name">
+<h3>{{name}}</h3>
+<br><br>
+
+<!-- Template Reference Variable. vid 32 -->
+<h2>Template Reference Variable. vid 32</h2>
+<input type="text" #box name="user" placeholder="Enter user name: ">
+<!-- <button (click)="getVal(box.value)">Call Function</button> -->
+<!-- <button (click)="getVal(box.placeholder)">Call Function</button> -->
+<button (click)="getVal(box)">Call Function</button>
+<br><br>
+
+<!-- Basic of TS for angular. Vid 33 -->
+<h2>Basic of TS (Type Script) for angular. Vid 33</h2>
+<br>
+
+<!-- Pipes in Angular. Vid 34 -->
+<h2>Pipes in Angular. Vid 34</h2>
+<h3>{{title}}</h3>
+<h3>{{title | uppercase}}</h3>
+<h3>{{title | lowercase}}</h3>
+
+<h3>{{today}}</h3>
+<h3>{{today | date}}</h3>
+<h3>{{today | date : 'fullDate'}}</h3>
+
+<h3>{{capString(title)}}</h3>
+<br>
+
+<!-- Advance Pipes Vid 35 -->
+<h3>Advance Pipes Vid 35</h3>
+<h3>{{title | uppercase}}</h3>
+<h3>{{title | slice : 2}}</h3>
+<h3>{{title | slice : 2 : 4}}</h3>
+<h3>{{title | slice : 2 : 4 | uppercase}}</h3> <!-- 2 Pipes use -->
+<h3>{{user}}</h3>
+<h3>{{user | json}}</h3>
+<h3>{{user | json | uppercase}}</h3>
+
+<h3>2000.3000</h3>
+<h3>{{2000.3000 |number : '2.2-3'}}</h3>
+<h3>{{002000.3000 |number : '2.2-3'}}</h3>
+<h3>{{2.3 |number : '3.3-5'}}</h3>
+
+<h3>{{20 | currency}}</h3>
+<h3>{{20 | currency:'USD'}}</h3>
+<h3>{{20 | currency:'GBP'}}</h3>
+<h3>{{20 | currency:'INR'}}</h3>
+<!-- <h3>{{"hello how are you" | capitalize}}</h3>  This is rong error -->
+<h3>{{"hello how are you" | titlecase}}</h3>
+<br>
+
+<!-- Custom Pipes Vid 36 -->
+<h2>Custom Pipes Vid 36</h2>
+<h3>{{20 | usdInr : 72}}</h3>
+<!-- <h3>{{20 | usdInr : 100}}</h3> -->
+
+<!-- Template driven form Vid 38 -->
+<h2>Template driven form Vid 38</h2>
+<!-- <form #loginForm="ngForm" (ngSubmit)="userLogin(loginForm.value)"> -->
+	<!-- <form #loginForm="ngForm" (ngSubmit)="userLogin(loginForm.controls)" > -->
+	<!-- <input type="text" name="name" id="" placeholder="Enter Name: " ngModel>
+	<br><br>
+	<input type="password" placeholder="Enter Password: " name="password" ngModel>
+	<br><br>
+	<button>Login</button>
+</form> -->
+
+<button (click)="userLogin(loginForm.value)">Out Side Login</button>
+<br><br>
+
+<!-- Reactive Form in Angular Vid 39 -->
+<h2>Reactive Form in Angular Vid 39</h2>
+<form [formGroup]="loginForm" (ngSubmit)="loginUser()">
+	<input type="text" name="user" id="" placeholder="Enter Name:" formControlName="user">
+	<br><br>
+	<input type="password" name="password" id="" placeholder="Enter Password:" formControlName="password">
+	<br><br>
+	<button>Login</button>
+</form>
+<br><br>
+
+<!-- Directives in Angular Vid 40 -->
+<h2>Directives in Angular Vid 40</h2>
+<h2>{{title}}</h2>
+<h2 appRedEl>{{title}}</h2>
+
+<p>Hello How are you</p>
+<p appRedEl>CODE STEP BY STEP</p>
+
+<p>Hello How are you</p>
+<p appRedEl>CODE STEP BY STEP</p>
+
+<p>Hello How are you</p>
+<p appRedEl>CODE STEP BY STEP</p>
+<br><br>
+
+<!-- Start with Routing Vid 41 -->
+<h2>Start with Routing Vid 41</h2>
+<a routerLink="">Home</a>
+<br>
+<a routerLink="about">About</a>
+<br>
+<a routerLink="user">User</a>
+<br>
+
+<a routerLink="233">XYZ</a>
+<br>
+
+
+<router-outlet></router-outlet>
+<br>
+
+<!-- Dynamic Routing Vid 42 -->
+<h2>Dynamic Routing Vid 42</h2>
+<a routerLink="user/20">Anil</a>
+<br>
+<a routerLink="user/30">Deepak</a>
+<br>
+<a routerLink="user/40">Sandeep</a>
+<br>
+
+<router-outlet></router-outlet>
+<br><br>
+
+<!-- 404 Page (Wild Card 404 Page Routing) Vid 43 -->
+<h2>404 Page (Wild Card 404 Page Routing)</h2>
+<router-outlet></router-outlet>
+<br><br>
+
+<!-- Child Route (Child Routing) Vid 44 -->
+<h2>Child Route (Child Routing) Vid 44</h2>
+<router-outlet></router-outlet>
+<br><br>
+
+<!-- 16 / Aug / 24 -->
+<!-- What is Service? Why we need iy? Vid 43 -->
+<h2>What is Service? Why we need iy? Vid 43</h2>
+
+<ul>
+  <li *ngFor="let data of memberData">
+    {{data.name}}
+  </li>
+</ul>
+
+<app-footer></app-footer>
+
